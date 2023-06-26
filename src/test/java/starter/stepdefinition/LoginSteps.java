@@ -20,13 +20,13 @@ public class LoginSteps {
     @When("user input email")
     public void userInputValidEmail_() {
         loginScreen.ClickEmail();
-        loginScreen.InputEmail("seokjin@gmail.com");
+        loginScreen.InputEmail("din@gmail.com");
     }
 
     @And("user input password")
     public void userInputInvalidPassword_() {
         loginScreen.ClickPassword();
-        loginScreen.InputPassword("Altera123!");
+        loginScreen.InputPassword("Din@gmail.com1");
     }
 
 
