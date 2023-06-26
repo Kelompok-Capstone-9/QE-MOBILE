@@ -32,7 +32,7 @@ public class BookOfflineScreen extends BasePageObject {
     }
 
     private By offlineClassBookButton(){
-        return AppiumBy.xpath("(//android.view.View[@content-desc=\"Book\"])[2]");
+        return AppiumBy.xpath("(//android.view.View[@content-desc=\"Book\"])[1]");
     }
 
     private By packageSelect(){
@@ -65,15 +65,15 @@ public class BookOfflineScreen extends BasePageObject {
     }
 
     private By cardNumberField(){
-        return AppiumBy.xpath("(//*[contains(@class,'EditText')])[1]");
+        return AppiumBy.xpath("//android.widget.EditText[@index='4']");
     }
 
     private By validityPeriodField(){
-        return AppiumBy.xpath("(//*[contains(@class,'EditText')])[2]");
+        return AppiumBy.xpath("//android.widget.EditText[@index='5']");
     }
 
     private By cvvField(){
-        return AppiumBy.xpath("(//*[contains(@class,'EditText')])[3]");
+        return AppiumBy.xpath("//android.widget.EditText[@index='6']");
     }
 
     private By buttonPayNow(){
@@ -256,5 +256,38 @@ public class BookOfflineScreen extends BasePageObject {
     @Step
     public void clickLocationResult() {
         onClick(locationResult());
+    }
+
+    private By searchOfflineClass(){
+        return AppiumBy.xpath("//android.view.View[@content-desc=\"Search gym or virtual training\"]");
+    }
+
+    private By offlineClassSearchField(){
+        return AppiumBy.xpath("//android.widget.EditText[@index='1']");
+    }
+
+    private By pilatesOffline(){
+        return AppiumBy.xpath("//android.view.View[@content-desc=\"Pilates\n" +
+                "offline\"]");
+    }
+
+    @Step
+    public void clickSearchOfflineClass(){
+        onClick(searchOfflineClass());
+    }
+
+    @Step
+    public void clickOfflineClassSearchField(){
+        onClick(offlineClassSearchField());
+    }
+
+    @Step
+    public void inputSearchOfflineClass(String offlineClass){
+        onType(offlineClassSearchField(), offlineClass);
+    }
+
+    @Step
+    public void clickPilatesOfflineResult(){
+        onClick(pilatesOffline());
     }
 }

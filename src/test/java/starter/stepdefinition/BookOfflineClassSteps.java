@@ -99,7 +99,7 @@ public class BookOfflineClassSteps {
     @And("user input validity period")
     public void userInputValidityPeriod() {
         bookOfflineScreen.clickValidityPeriodField();
-        bookOfflineScreen.inputValidityPeriod("01/2025");
+        bookOfflineScreen.inputValidityPeriod("2/2025");
     }
 
     @And("user input cvv")
@@ -116,5 +116,13 @@ public class BookOfflineClassSteps {
     @Then("user see successfully payment pop up")
     public void userSeeSuccessfullyPaymentPopUp() {
         bookOfflineScreen.seeSuccessfullyPaymentPopUp();
+    }
+
+    @And("user input offline class")
+    public void userInputOfflineClass() {
+        bookOfflineScreen.clickSearchOfflineClass();
+        bookOfflineScreen.clickOfflineClassSearchField();
+        bookOfflineScreen.inputSearchOfflineClass("pilates");
+        bookOfflineScreen.clickPilatesOfflineResult();
     }
 }

@@ -9,6 +9,7 @@ Feature: As a user i want to book offline class so that i can take an offline cl
     @BookingOffline-8
     Scenario: As a user i want to book offline class
       When user input location
+      And user input offline class
       And user select session
       And user click offline class book button
       And user select package
