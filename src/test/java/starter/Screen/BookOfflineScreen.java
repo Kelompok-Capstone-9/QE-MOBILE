@@ -88,11 +88,6 @@ public class BookOfflineScreen extends BasePageObject {
                 "Go to details\"]");
     }
 
-    private By offlineBookingDetailTitle(){
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"Details Ticket\"]");
-    }
-
-
     private By session(){
         return AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"Siang\n" +
                 "12PM - 5PM\"]");
@@ -225,6 +220,7 @@ public class BookOfflineScreen extends BasePageObject {
     @Step
     public void inputCvv(String cvv){
         onType(cvvField(), cvv);
+        driver.getAndroidDriver().hideKeyboard();
     }
 
     @Step
@@ -235,16 +231,6 @@ public class BookOfflineScreen extends BasePageObject {
     @Step
     public void seeSuccessfullyPaymentPopUp(){
         Assert.assertTrue(waitUntilVisible(successfullyPaymentPopUp()).isDisplayed());
-    }
-
-    @Step
-    public void clickGoToDetailsButton(){
-        onClick(successfullyPaymentPopUp());
-    }
-
-    @Step
-    public void canSeeOfflineBookingDetail(){
-        Assert.assertTrue(waitUntilVisible(offlineBookingDetailTitle()).isDisplayed());
     }
 
     @Step

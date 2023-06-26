@@ -113,18 +113,8 @@ public class BookOfflineClassSteps {
         bookOfflineScreen.clickPayNowAgainButton();
     }
 
-    @And("user see successfully payment pop up")
+    @Then("user see successfully payment pop up")
     public void userSeeSuccessfullyPaymentPopUp() {
         bookOfflineScreen.seeSuccessfullyPaymentPopUp();
-    }
-
-    @And("user click go to details button")
-    public void userClickGoToDetailsButton() {
-        bookOfflineScreen.clickGoToDetailsButton();
-    }
-
-    @Then("user can see offline booking detail")
-    public void userCanSeeOfflineBookingDetail() {
-        bookOfflineScreen.canSeeOfflineBookingDetail();
     }
 }

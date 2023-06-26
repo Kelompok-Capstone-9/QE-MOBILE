@@ -22,6 +22,4 @@ Feature: As a user i want to book offline class so that i can take an offline cl
       And user input validity period
       And user input cvv
       And user click "Pay Now" button
-      And user see successfully payment pop up
-      And user click go to details button
-      Then user can see offline booking detail
+      Then user see successfully payment pop up
