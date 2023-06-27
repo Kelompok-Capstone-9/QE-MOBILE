@@ -9,7 +9,7 @@ Feature: As a user i have be able to register so that i can see login screen
     And user input confirm password
     And user click Sign Up Button
     Then user view "Registration Successful"
-@1.1
+  @Regist
   Scenario: As a user i want to register with input valid name, empty email, valid password, and valid confirm password
     Given user on the login screen
     And user click "No account yet? Create one"
@@ -19,7 +19,7 @@ Feature: As a user i have be able to register so that i can see login screen
     And user input valid confirm_password
     And user click register button
     Then user see "Enter Valid Email" error message
-@1.2
+  @Regist
   Scenario: As a user i want to register with input empty name, valid email, valid password, and valid confirm password
     Given user on the login screen
     And user click "No account yet? Create one"
@@ -29,7 +29,7 @@ Feature: As a user i have be able to register so that i can see login screen
     And user input valid confirm password
     And user click register button
     Then user view Enter Full Name error message
-@1.3
+  @Regist
   Scenario: As a user i want to register with input valid name, valid email, empty password, and valid confirm password
     Given user on the login screen
     And user click "No account yet? Create one"
@@ -39,7 +39,7 @@ Feature: As a user i have be able to register so that i can see login screen
     And user input valid confirm password
     And user click register button
     Then user can see "Enter Password" error message
-@1.4
+  @Regist
   Scenario: As a user i want to register with input valid name, valid email, valid password, and empty confirm password
     Given user on the login screen
     And user click "No account yet? Create one"
@@ -49,7 +49,7 @@ Feature: As a user i have be able to register so that i can see login screen
     And user input empty confirm password
     And user click register button
     Then user can see "Enter Password" error message
-@1.5
+  @Regist
   Scenario: As a user i want to register with input valid name, valid email, valid password, and invalid confirm password
     Given user on the login screen
     And user click "No account yet? Create one"
@@ -59,7 +59,7 @@ Feature: As a user i have be able to register so that i can see login screen
     And user input invalid confirm password
     And user click register button
     Then user can view "Password Does Not Matches" error message
-@1.6
+  @Regist
   Scenario: As a user i want to register with input Name less than 3 characters, valid email, valid password, and valid confirm password
     Given user on the login screen
     And user click "No account yet? Create one"
@@ -69,7 +69,7 @@ Feature: As a user i have be able to register so that i can see login screen
     And user input valid confirm password
     And user click register button
     Then user view "Username must be between 3-25 characters" error message
-@1.7
+  @Regist
   Scenario: As a user i want to register with input Name numberic, valid email, valid password, and valid confirm password
     Given user on the login screen
     And user click "No account yet? Create one"

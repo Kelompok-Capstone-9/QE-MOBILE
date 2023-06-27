@@ -66,7 +66,7 @@ public class JoinMembershipScreen extends BasePageObject {
     }
 
     private By ChooseLevelBeginner() {
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"Beginner\n" +
+        return AppiumBy.xpath("//android.view.View[@content-desc=\"beginner\n" +
                 "I want to start training\"]");
     }
 
@@ -81,9 +81,9 @@ public class JoinMembershipScreen extends BasePageObject {
     }
 
     private By Permonth() {
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"Rp 99.000\n" +
-                "per month\n" +
-                "1 Month\"]");
+        return AppiumBy.xpath("(//android.view.View[@content-desc=\"6 Month\n" +
+                "Rp. 289990\n" +
+                "per 6 Month\"])[1]");
     }
 
     private By Per3Month() {
@@ -99,7 +99,7 @@ public class JoinMembershipScreen extends BasePageObject {
     }
 
     private By Gopay() {
-        return AppiumBy.xpath("//android.widget.RadioButton[@bounds='[0,366][168,534]']");
+        return AppiumBy.xpath("(//android.widget.RadioButton[@index='0'])[1]");
     }
 
     private By Creditcard() {
