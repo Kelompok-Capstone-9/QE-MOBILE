@@ -27,7 +27,10 @@ public class ArticlesScreen extends BasePageObject {
 
 
     private By Mobile() {
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"MOBILE\"]");
+        return AppiumBy.xpath("//android.view.View[@content-desc=\"Android Central\"]");
+    }
+    private By ValidatePage() {
+        return AppiumBy.xpath("//android.view.View[@content-desc=\"Google Lens can identify skin conditions and is coming soon to Bard\"]");
     }
 
 
@@ -69,5 +72,9 @@ public class ArticlesScreen extends BasePageObject {
     @Step
     public void ClickMobileArticles() {
         onClick(Mobile());
+    }
+    @Step
+    public void validatePage() {
+        Assert.assertTrue(waitUntilVisible(ValidatePage()).isDisplayed());
     }
 }

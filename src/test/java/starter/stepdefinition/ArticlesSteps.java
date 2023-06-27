@@ -37,6 +37,6 @@ public class ArticlesSteps {
 
     @Then("user can detail articles")
     public void userCanDetailArticles() {
-        System.out.println("user can detail articles");
+       articlesScreen.validatePage();
     }
 }

@@ -9,5 +9,5 @@ Feature: As a user i have be able to login so that i can see all articles
   Scenario: As a user i can see detail articles
     Given user on "Gofit Homepage"
     When user click "view all" in homepage
-    And user click "Mobile" articles
+    And user click "Android Central" articles
     Then user can detail articles
