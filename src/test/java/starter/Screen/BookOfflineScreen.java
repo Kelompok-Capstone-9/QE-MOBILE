@@ -32,12 +32,12 @@ public class BookOfflineScreen extends BasePageObject {
     }
 
     private By offlineClassBookButton(){
-        return AppiumBy.xpath("(//android.view.View[@content-desc=\"Book\"])[1]");
+        return AppiumBy.xpath("(//android.view.View[@content-desc=\"Book\"])[2]");
     }
 
     private By packageSelect(){
         return AppiumBy.xpath("//android.widget.Button[@content-desc=\"79.000\n" +
-                "/monthly\"]");
+                "/daily\"]");
     }
 
     private By bookingNowButton(){
@@ -89,8 +89,8 @@ public class BookOfflineScreen extends BasePageObject {
     }
 
     private By session(){
-        return AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"Siang\n" +
-                "12PM - 5PM\"]");
+        return AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"Pagi\n" +
+                "5AM - 12PM\"]");
     }
 
     private By enterYourLocationField(){
@@ -289,5 +289,14 @@ public class BookOfflineScreen extends BasePageObject {
     @Step
     public void clickPilatesOfflineResult(){
         onClick(pilatesOffline());
+    }
+
+    private By locationPermission(){
+        return AppiumBy.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
+    }
+
+    @Step
+    public void clickLocationPermission(){
+        onClick(locationPermission());
     }
 }
