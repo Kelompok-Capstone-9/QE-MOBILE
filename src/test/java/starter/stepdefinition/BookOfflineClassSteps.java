@@ -125,4 +125,9 @@ public class BookOfflineClassSteps {
         bookOfflineScreen.inputSearchOfflineClass("pilates");
         bookOfflineScreen.clickPilatesOfflineResult();
     }
+
+    @And("user click location permission")
+    public void userClickLocationPermission() {
+        bookOfflineScreen.clickLocationPermission();
+    }
 }

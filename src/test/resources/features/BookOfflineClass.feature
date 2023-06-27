@@ -4,6 +4,7 @@ Feature: As a user i want to book offline class so that i can take an offline cl
     Given user is login
     And user on home screen
     And user click explore menu
+    And user click location permission
     And user on explore screen
 
     @BookingOffline-8

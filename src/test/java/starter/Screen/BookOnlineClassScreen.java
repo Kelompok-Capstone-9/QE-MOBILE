@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import test.automation.pageobject.BasePageObject;
 
-public class BookOfflineScreen extends BasePageObject {
+public class BookOnlineClassScreen extends BasePageObject {
     private By emailFiled() {
         return AppiumBy.xpath("//android.widget.EditText[@index='2']");
     }
@@ -27,17 +27,34 @@ public class BookOfflineScreen extends BasePageObject {
         return AppiumBy.xpath("//android.view.View[@content-desc=\"Explore\"]");
     }
 
+    private By locationPermission(){
+        return AppiumBy.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
+    }
+
     private By exploreTitle(){
         return AppiumBy.xpath("(//android.view.View[@content-desc='Explore'])[1]");
     }
 
-    private By offlineClassBookButton(){
-        return AppiumBy.xpath("(//android.view.View[@content-desc=\"Book\"])[2]");
+    private By searchOnlineClassGym(){
+        return AppiumBy.xpath("//android.view.View[@content-desc=\"Search gym or virtual training\"]");
+    }
+
+    private By searchOnlineClass(){
+        return AppiumBy.xpath("//android.widget.EditText[@index='1']");
+    }
+
+    private By pilatesOnlineClass(){
+        return AppiumBy.xpath("//android.view.View[@content-desc=\"Pilates Class\n" +
+                "online\"]");
+    }
+
+    private By onlineClassBookButton(){
+        return AppiumBy.xpath("(//android.view.View[@content-desc=\"Book\"])[1]");
     }
 
     private By packageSelect(){
         return AppiumBy.xpath("//android.widget.Button[@content-desc=\"79.000\n" +
-                "/daily\"]");
+                "/monthly\"]");
     }
 
     private By bookingNowButton(){
@@ -88,25 +105,6 @@ public class BookOfflineScreen extends BasePageObject {
                 "Go to details\"]");
     }
 
-    private By session(){
-        return AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"Pagi\n" +
-                "5AM - 12PM\"]");
-    }
-
-    private By enterYourLocationField(){
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"Your location\n" +
-                "Enter your location\"]");
-    }
-
-    private By searchGymLocationField(){
-        return AppiumBy.xpath("//android.widget.EditText[@index='1']");
-    }
-
-    private By locationResult(){
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"Jl. Zaenal Arifin\n" +
-                "Medan\"]");
-    }
-
     @Step
     public void onLoginScreen() {
         Assert.assertTrue(waitUntilVisible(loginButton()).isDisplayed());
@@ -148,13 +146,38 @@ public class BookOfflineScreen extends BasePageObject {
     }
 
     @Step
+    public void clickLocationPermission(){
+        onClick(locationPermission());
+    }
+
+    @Step
     public void onExploreScreen(){
         Assert.assertTrue(waitUntilVisible(exploreTitle()).isDisplayed());
     }
 
     @Step
-    public void clickOfflineClassBookButton(){
-        onClick(offlineClassBookButton());
+    public void clickSearchOnlineClassGym(){
+        onClick(searchOnlineClassGym());
+    }
+
+    @Step
+    public void clickSearchOnlineClass(){
+        onClick(searchOnlineClass());
+    }
+
+    @Step
+    public void inputOnlineClassSearch(String onlineClass){
+        onType(searchOnlineClass(),onlineClass);
+    }
+
+    @Step
+    public void clickPilates(){
+        onClick(pilatesOnlineClass());
+    }
+
+    @Step
+    public void clickOnlineClassBookButton(){
+        onClick(onlineClassBookButton());
     }
 
     @Step
@@ -231,72 +254,5 @@ public class BookOfflineScreen extends BasePageObject {
     @Step
     public void seeSuccessfullyPaymentPopUp(){
         Assert.assertTrue(waitUntilVisible(successfullyPaymentPopUp()).isDisplayed());
-    }
-
-    @Step
-    public void selectSession(){
-        onClick(session());
-    }
-
-    @Step
-    public void clickEnterYourLocationField(){
-        onClick(enterYourLocationField());
-    }
-
-    @Step
-    public void clickSearchGymLocationField(){
-        onClick(searchGymLocationField());
-    }
-
-    @Step
-    public void inputSearchGymLocation(String location){
-        onType(searchGymLocationField(), location);
-    }
-
-    @Step
-    public void clickLocationResult() {
-        onClick(locationResult());
-    }
-
-    private By searchOfflineClass(){
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"Search gym or virtual training\"]");
-    }
-
-    private By offlineClassSearchField(){
-        return AppiumBy.xpath("//android.widget.EditText[@index='1']");
-    }
-
-    private By pilatesOffline(){
-        return AppiumBy.xpath("//android.view.View[@content-desc=\"Pilates\n" +
-                "offline\"]");
-    }
-
-    @Step
-    public void clickSearchOfflineClass(){
-        onClick(searchOfflineClass());
-    }
-
-    @Step
-    public void clickOfflineClassSearchField(){
-        onClick(offlineClassSearchField());
-    }
-
-    @Step
-    public void inputSearchOfflineClass(String offlineClass){
-        onType(offlineClassSearchField(), offlineClass);
-    }
-
-    @Step
-    public void clickPilatesOfflineResult(){
-        onClick(pilatesOffline());
-    }
-
-    private By locationPermission(){
-        return AppiumBy.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
-    }
-
-    @Step
-    public void clickLocationPermission(){
-        onClick(locationPermission());
     }
 }
